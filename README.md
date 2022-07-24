@@ -15,6 +15,8 @@ The objective of this repository is to share what I'm learning on my daily Java 
 
 ### [API Sprig Rest with MongoDB and Deploy on Heroku](https://github.com/RaquelMichelon/apiVacationsDestinationsWithMongoDB) - July, 2022
 
+### [Java Coding Puzzles with solutions](https://github.com/RaquelMichelon/JavaStudiesMiniProjects/tree/main/JavaCodingPuzzles) - July, 2022
+
 ### [Email Sender with jakarta mail](https://github.com/RaquelMichelon/JavaStudiesMiniProjects/tree/main/EmailSender) - July, 2022
 
 ### [CountDownLatch Class](https://github.com/RaquelMichelon/JavaStudiesMiniProjects/tree/main/countdownlatch) - July, 2022
