@@ -18,7 +18,9 @@ public class Example01 {
   
   public static void main(String[] args) {
     Node data = createData();
-    preorderTraversal(data);
+    preorderTraversal(data); //a b c e f d g
+    postorderTraversal(data); //f e c d b g a
+    inorderTraversal(data); //e f c b d a g
     
   }
   
@@ -28,15 +30,29 @@ public class Example01 {
     if(n == null){
       return; //don't do anything
     }
+    //print it before
     System.out.println(n.value + "  "); //go and print a then 
     preorderTraversal(n.left); //is a recursive algorithm; then go left and print b, then c, then e
     preorderTraversal(n.right); //is a recursive algorithm
   }
   
   public static void postorderTraversal(Node n) {
+    //go to the button first and then start printing
+    if(n == null){
+      return;
+    }
+    postorderTraversal(n.left);
+    postorderTraversal(n.right);
+    System.out.println(n.value + "  "); //print it after
   }
   
   public static void inorderTraversal(Node n) {
+    if(n == null){
+      return;
+    }
+    inorderTraversal(n.left);
+    System.out.println(n.value + "  "); //print between
+    inorderTraversal(n.right);
   }
   
   public static Node createData() {
