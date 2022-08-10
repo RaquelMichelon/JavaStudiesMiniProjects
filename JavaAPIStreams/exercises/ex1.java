@@ -29,3 +29,16 @@
 			.filter(p -> p.getCategory().equalsIgnoreCase("Toys")) //filter by category
 			.map(p -> p.withPrice(p.getPrice() * 0.9)) //apply discount to each product
 			.collect(Collectors.toList());
+
+
+
+	//Exercise 4 — Obtain a list of products ordered by customer of 
+	//tier 2 between 01-Feb-2021 and 01-Apr-2021
+	  List<Product> result = orderRepo.findAll()
+	  .stream()
+	  .filter(o -> o.getCustomer().getTier() == 2)
+	  .filter(o -> o.getOrderDate().compareTo(LocalDate.of(2021, 2, 1)) >= 0)
+	  .filter(o -> o.getOrderDate().compareTo(LocalDate.of(2021, 4, 1)) <= 0)
+	  .flatMap(o -> o.getProducts().stream())
+	  .distinct()
+	  .collect(Collectors.toList());
