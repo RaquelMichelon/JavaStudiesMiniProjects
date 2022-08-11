@@ -1,4 +1,4 @@
-package puzzle32;
+package puzzle31;
 
 /*
  * Will this code compile? If yes what will be the output?
@@ -6,7 +6,7 @@ package puzzle32;
  * we can have the finally block without a catch block
  * the output will be: 43, then End
  */
-public class Puzzle32 {
+public class Puzzle31 {
 
 	public static void main(String[] args) {
 		int[] a = {12, 17, 43};
