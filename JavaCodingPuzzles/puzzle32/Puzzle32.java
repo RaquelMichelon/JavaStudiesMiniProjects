@@ -1,11 +1,11 @@
-package puzzle31;
+package puzzle32;
 
 /*
  * Will this code compile. If yes, what will be the output.
  * 
  * This code will print 30, then print END!!!, then return true
  */
-public class Puzzle31 {
+public class Puzzle32 {
 
 	public static void main(String[] args) {
 		method1();
