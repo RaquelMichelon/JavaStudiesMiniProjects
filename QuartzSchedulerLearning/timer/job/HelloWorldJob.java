@@ -15,6 +15,10 @@ public class HelloWorldJob implements Job { //every job needs to implement the J
     //execute() method needs to be implemented
     @Override
     public void execute(JobExecutionContext context) throws JobExecutionException {
-        Log.info("Hello, World!");
+        //getting the job data to read callbackData
+        JobDataMap jobDataMap = context.getJobDetail().getJobDataMap();
+        TimerInfo timerInfo = (TimerInfo) jobDataMap.get(HelloWorldJob.class.getSimpleName());
+        Log.info(timerInfo.getCallBackData());
+        //Log.info("Hello, World!");
     }
 }
