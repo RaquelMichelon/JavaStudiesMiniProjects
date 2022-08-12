@@ -23,6 +23,18 @@ public class ScheduledService {
     public ScheduledService(Scheduler scheduler) {
         this.scheduler = scheduler;
     }
+    
+    //CREATING A METHOD FOR SCHEDULING
+    public void schedule(final Class jobClass, final TimerInfo info) {
+        final JobDetail jobDetail = TimerUtils.buildJobDetails(jobClass, info);
+        final Trigger trigger = TimerUtils.buildTrigger(jobClass, info);
+
+        try {
+            scheduler.scheduleJob(jobDetail, trigger);
+        } catch (SchedulerException e) {
+            Log.error(e.getMessage(), e);
+        }
+    }
 
     //start() and shutdown()
     @PostConstruct
