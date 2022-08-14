@@ -1,16 +1,13 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
-
 public class GuessMovie {
     public static void main(String[] args) {
         //Step 1 read the movie list and display the whole list - done!
         //Step 2 randomly pick one movie and display it - done!
         Game game = new Game();
-        game.getRandomMovie(game.displayMovies());
+        String hiddenMovie = game.getRandomMovie(game.displayMovies());
+        game.displayHiddenMovie(hiddenMovie);
+
+        //Step 3 convert the letters to underscore and display it - done!
+        game.convertTitleToUnderscore(hiddenMovie);
 
 //        int randomNumber = (int) Math.random() * moviesList.size();
 //
