@@ -8,8 +8,9 @@ import java.util.Scanner;
 public class GuessMovie {
     public static void main(String[] args) {
         //Step 1 read the movie list and display the whole list - done!
+        //Step 2 randomly pick one movie and display it - done!
         Game game = new Game();
-        game.displayMovies();
+        game.getRandomMovie(game.displayMovies());
 
 //        int randomNumber = (int) Math.random() * moviesList.size();
 //
