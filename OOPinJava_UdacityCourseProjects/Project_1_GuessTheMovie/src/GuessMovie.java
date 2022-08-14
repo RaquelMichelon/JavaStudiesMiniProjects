@@ -7,25 +7,15 @@ import java.util.Scanner;
 
 public class GuessMovie {
     public static void main(String[] args) {
-        //1 read the movie list and display the whole list - done!
-        File file = new File("movies.txt");
-        List<String> moviesList = new ArrayList<String>();
-        Scanner scanner;
-        try {
-            scanner = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        while(scanner.hasNextLine()) {
-            moviesList.add(scanner.nextLine());
-        }
-        System.out.println(moviesList);
+        //Step 1 read the movie list and display the whole list - done!
+        Game game = new Game();
+        game.displayMovies();
 
-        int randomNumber = (int) Math.random() * moviesList.size();
-
-        for (String movie : moviesList) {
-            if()
-        }
+//        int randomNumber = (int) Math.random() * moviesList.size();
+//
+//        for (String movie : moviesList) {
+//            if()
+//        }
     }
 }
 
