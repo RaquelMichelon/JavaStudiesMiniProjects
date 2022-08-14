@@ -9,17 +9,33 @@ public class Game {
 
     private String movieName;
 
-    //set the name of the movie
-    public void getRandomMovie(List<String> allMovies) {
-        allMovies = displayMovies();
-        Random chooseMovie = new Random();
-        String selectedMovie = allMovies.get(chooseMovie.nextInt(allMovies.size()));
-        System.out.printf("Picked movie is: %s", selectedMovie);
-    }
-
     //handle a single guess
 
+    //convert hidden title to underscore
+    public void convertTitleToUnderscore(String title) {
+        char[] letters = title.toCharArray();
+        for (char letter : letters) {
+            if (letter == ' ') {
+                System.out.print("   ");
+            } else {
+                System.out.print(" _ ");
+            }
+        }
+    }
+
     //display the hidden movie title
+    public void displayHiddenMovie(String title) {
+        System.out.printf("The picked movie was: %s %n", title);
+    }
+
+    //set the name of the movie
+    public String getRandomMovie(List<String> allMovies) {
+        allMovies = displayMovies();
+        Random chooseMovie = new Random();
+        return allMovies.get(chooseMovie.nextInt(allMovies.size()));
+    }
+
+    //get the movies from a file
     public List<String> displayMovies() {
         File file = new File("movies.txt");
         List<String> moviesList = new ArrayList<String>();
@@ -32,8 +48,6 @@ public class Game {
         while(scanner.hasNextLine()) {
             moviesList.add(scanner.nextLine());
         }
-        System.out.println(moviesList);
-
         return moviesList;
     }
 
