@@ -1,3 +1,7 @@
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class GuessMovie {
     public static void main(String[] args) {
         //Step 1 read the movie list and display the whole list - done!
@@ -9,13 +13,35 @@ public class GuessMovie {
         //Step 3 convert the letters to underscore and display it - done!
         game.convertTitleToUnderscore(hiddenMovie);
 
-//        int randomNumber = (int) Math.random() * moviesList.size();
-//
-//        for (String movie : moviesList) {
-//            if()
-//        }
+        //Step 4 start reading the user's input and search for it in the title - done!
+        Scanner input = new Scanner(System.in);
+        System.out.println("Type one letter: ");
+        String userLetter = input.next();
+
+        if (userLetter.isEmpty()) {
+            System.out.println("You need to type at least one letter from A to Z... Try again!");
+        } else if (userLetter.length() > 1) {
+            System.out.println("Ops! You can just pick one letter by time. Try again!");
+        } else if (userLetter.matches(".*[0-9].*")) {
+            System.out.println("Ops! It must be a letter not a number. Try again!");
+        } else {
+            char[] letters = hiddenMovie.toCharArray();
+
+            for (char letter : letters) {
+                if (letter == ' ') {
+                    System.out.print("   ");
+                } else if (letter == userLetter.toCharArray()[0]) {
+                    System.out.printf(" %s ", userLetter);
+                } else {
+                    System.out.print(" _ ");
+                }
+            }
+
+        }
+
     }
 }
+
 
 //it's time to build your own project in Java, this time you'll be completing
 // a game where the player gets to guess the movie name given the number of
