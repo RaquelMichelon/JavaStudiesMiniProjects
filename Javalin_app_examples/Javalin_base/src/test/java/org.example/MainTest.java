@@ -45,7 +45,19 @@ class MainTest {
       .body("text", equalTo("Hello World"));
   }
   
-  
+  @Test
+  @DisplayName("Test post json value")
+  void testPostJson() {
+    given()
+      .body("{\"text\": \"Hello from test\"\n}")
+      .contentType("application/json")
+      .when()
+      .post("/json")
+      .then()
+      .statusCode(200)
+      .contentType("text/plain")
+      .body(equalTo("Got post of hello from test"));
+  }
   
   
 }
