@@ -34,6 +34,17 @@ class MainTest {
       .body(equalTo("Hello World from javalin"));
   }
   
+  @Test
+  @DisplayName("Test get json value")
+  void testGetJson() {
+    when()
+      .get("/json")
+      .then()
+      .statusCode(200)
+      .contentType("application/json")
+      .body("text", equalTo("Hello World"));
+  }
+  
   
   
   
