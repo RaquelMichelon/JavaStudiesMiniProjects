@@ -33,4 +33,28 @@ public class Board {
         }
 
     }
+
+    //method to check if one space in the board is free to a new play
+    private boolean isSpaceFree(int row, int col) {
+        if (row >= MAX_ROWS || col >= MAX_COLUMNS) {
+            return false;
+        }
+        if (gameBoard[row][col] == null) {
+            return true; //space free
+        } else {
+            return false;
+        }
+    }
+
+    //to make a play, first check if there is space free
+    public boolean play(char player, int row, int col) {
+
+        if (isSpaceFree[row][col]) {
+            gameBoard[row][col] = new Pieces(player, row, col);
+            return true; //It is possible to make a play
+        } else {
+            return false;
+        }
+
+    }
 }
