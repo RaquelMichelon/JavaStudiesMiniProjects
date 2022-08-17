@@ -74,4 +74,22 @@ public class Board {
     }
 
 
+    //have a winner
+    public boolean haveAWinner() {
+        boolean winner = false;
+
+        //winner in rows
+        for (int row = 0; row < MAX_ROWS; row++) {
+            if (!Arrays.stream(gameboard[row]).anyMatch(obj -> obj == null)) {
+                winner = Arrays.stream(gameBoard[row])
+                    .map(x -> x.getName())
+                    .distinct().coutn() <= 1;
+
+            }
+        }
+
+        //winner in columns
+    }
+
+
 }
