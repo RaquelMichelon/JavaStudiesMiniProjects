@@ -22,16 +22,36 @@ public class Board {
 
     public void printBoard() {
 
-        for (int row = 0; row < MAX_ROWS; row++) {
-            for (int col = 0; col < MAX_COLUMNS; col++) {
-                if (gameBoard[row][col] == null) {
-                    System.out.print("Z");
-                } else {
-                    System.out.print(gameBoard[row][col].getName());
-                }
+        // for (int row = 0; row < MAX_ROWS; row++) {
+        //     for (int col = 0; col < MAX_COLUMNS; col++) {
+        //         if (gameBoard[row][col] == null) {
+        //             System.out.print("Z");
+        //         } else {
+        //             System.out.print(gameBoard[row][col].getName());
+        //         }
                 
+        //     }
+        //     System.out.println();
+        // }
+
+        String colHeader = "T  1 | 2 | 3 ";
+        System.out.println(colHeader);
+        System.out.println("-".repeat(colHeader.length()));
+        for (int row = 0; row < MAX_ROWS; row++) {
+            String printStr = "";
+            for (int col = 0; col < MAX_COLUMNS; col++) {
+                char playerName;
+                if (gameBoard[row][col] == null) {
+                    playerName = ' ';
+                } else {
+                    playerName = gameBoard[row][col].getName(); 
+                }
+                printStr = printStr + "|" + " " + playerName + " ";
             }
-            System.out.println();
+            System.out.println((row+1) + " " + printStr.substring(1));
+            if (row < (MAX_ROWS - 1)) {
+                System.out.println("-".repeat(printStr.length() + 1));
+            }
         }
 
     }
