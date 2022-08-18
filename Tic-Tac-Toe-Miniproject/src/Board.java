@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Board {
 
     private final int MAX_ROWS;
@@ -80,16 +82,49 @@ public class Board {
 
         //winner in rows
         for (int row = 0; row < MAX_ROWS; row++) {
-            if (!Arrays.stream(gameboard[row]).anyMatch(obj -> obj == null)) {
+            if (!Arrays.stream(gameBoard[row]).anyMatch(obj -> obj == null)) {
                 winner = Arrays.stream(gameBoard[row])
                     .map(x -> x.getName())
-                    .distinct().coutn() <= 1;
+                    .distinct().count() <= 1;
 
             }
         }
 
         //winner in columns
+        if (!winner) {
+            a:
+            for (int col = 0; col < MAX_COLUMNS; col++) {
+                Pieces[] column = new Pieces[MAX_ROWS];
+                
+                for (int row = 0; row < MAX_ROWS; row++) {
+                    column[row] = gameBoard[row][col];
+                }
+
+                if (!Arrays.stream(column).anyMatch(obj -> obj == null)) {
+                    winner = Arrays.stream(column).map(x -> x.getName()).distinct().count() <= 1;
+                    if (winner) {
+                        break a;
+                    }
+                }
+            }
+        }
+
+        //winner in diagonals
+        if (!winner) {
+            Pieces[] diagonals = new Pieces[MAX_ROWS];
+            for (int diag = 0; diag < MAX_ROWS; diag++) {
+                diagonals[diag] = gameBoard[diag][diag];
+            }
+            if (!Arrays.stream(diagonals).anyMatch(obj -> obj == null)) {
+                winner = Arrays.stream(diagonals).map(x -> x.getName()).distinct().count() <= 1;
+            }
+        }
+
+        return winner;
     }
+
+    //check if there is space available
+    
 
 
 }
