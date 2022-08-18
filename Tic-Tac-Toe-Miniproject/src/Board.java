@@ -124,7 +124,9 @@ public class Board {
     }
 
     //check if there is space available
-    
+    public boolean spaceAvailable() {
+        return Arrays.stream(gameBoard).flatMap(x -> Arrays.stream(x)).anyMatch(obj -> obj == null);
+    }
 
 
 }
