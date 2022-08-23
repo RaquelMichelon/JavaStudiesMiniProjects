@@ -27,6 +27,16 @@ public class Main {
         //Step 2. Check if file exists
         try {
             fileIn = new Scanner(new FileReader(filenameIn));
+            //Step 3. rename txt as html file
+            dotIndex = filenameIn.lastIndexOf(".");
+            if (dotIndex == -1) { 
+                fileNameOut = filenameIn + ".html";
+                //Hello --> will become Hello.html
+            } else {
+                fileNameOut = filenameIn.substring(0, dotIndex) + ".html";
+                //hello.txt --> will become hello.html
+            }
+            fileOut = new PrintWriter(fileNameOut);
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         }
