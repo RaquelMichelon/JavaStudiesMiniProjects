@@ -49,9 +49,34 @@ public class Main {
             if(line == null) {
                 System.out.println("The file is empty.");
             } else {
-                //read each line and go on...
-                
+                //Step 5. read each line and insert necessary tags
+                fileOut.println("<html>");
+                fileOut.println("<head>");
+                fileOut.println("</head>");
+                fileOut.println("<body>");
+                fileOut.println(line);
+
+                while(fileIn.hasNextLine()) {
+                    fileOut.println("<br>");
+                    line = fileIn.nextLine();
+
+                    if(line.isEmpty()) {
+                        fileOut.println("<br>");
+                    } else {
+                        fileOut.println(line);
+                    }
+
+                }
+
+                fileOut.println("</body>");
+                fileOut.println("</html>");
+
+                System.out.println("HTML file was processed!");
+
             }
+            //it's necessary to close all scanners...
+            fileIn.close();
+            fileOut.close();
 
 
 
