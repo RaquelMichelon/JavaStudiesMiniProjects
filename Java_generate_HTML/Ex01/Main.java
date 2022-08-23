@@ -37,6 +37,24 @@ public class Main {
                 //hello.txt --> will become hello.html
             }
             fileOut = new PrintWriter(fileNameOut);
+
+
+            //Step 4. determine if file is empty
+            try {
+                line = fileIn.nextLine();
+
+            } catch(NoSuchElementException e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+            if(line == null) {
+                System.out.println("The file is empty.");
+            } else {
+                //read each line and go on...
+                
+            }
+
+
+
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         }
