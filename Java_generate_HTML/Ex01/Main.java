@@ -23,5 +23,13 @@ public class Main {
         System.out.println("Enter a file name or path: ");
         filenameIn = scanner.nextLine();
 
+
+        //Step 2. Check if file exists
+        try {
+            fileIn = new Scanner(new FileReader(filenameIn));
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        }
+
     }
 }
