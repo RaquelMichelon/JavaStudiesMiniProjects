@@ -1,3 +1,58 @@
+<h1 align="center"> Java Studies and Mini Projects </h1>
+
+<p align="center">
+The objective of this repository is to share what I'm learning on my daily Java Studies <br/>
+</p>
+
+<p align="center">
+  <a href="#-setup">Setup</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-licença">License</a>
+</p>
+
+<p align="center">
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+</p>
+
+<br>
+
+> Note! This repository is a working in progress and maybe always will be, since I'm always learning something new in Java. 
+
+
+<br>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/30a0ecf99188be99a3c75a00efb5be61eca9c382/src/java/java.svg" alt="Java Logo">
+</p>
+
+
+## 🚧 Setup
+
+Steps to follow and get the project running:
+
+
+## 🚀 Technologies
+
+
+## 💻 Project
+
+
+## 🔖 Layout
+
+## :memo: Licença
+
+This project has the MIT license.
+
+---
+
+⌨️ Developed by [Carlos Ramos](https://github.com/CarlosEduardoFerreiraRamos) and [Raquel Michelon](https://github.com/RaquelMichelon)
+
+
+
+
+
 <p align="center">
     <br>
     <img src="https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/30a0ecf99188be99a3c75a00efb5be61eca9c382/src/java/java.svg" alt="Java Logo">
